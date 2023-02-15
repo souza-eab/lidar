@@ -16,7 +16,7 @@ Nos utilizamos os programas Faro, CloudCompare, R e Fusion.
 
 
 1. Repositório com códigos do R e Fusion
-1.1. Bibliotecas📚: LidR...
+1.1. Bibliotecas📚: LidR,ggplot2,... treetop
 
 ### More
 
