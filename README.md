@@ -13,9 +13,10 @@ Aqui os códigos desenvolvidos para processar, analisar e determinar 'TLS metric
 ## Workflow
 
 Nos utilizamos os programas Faro, CloudCompare, R e Fusion. 
-Bibliotecas📚: LidR; 
+
 
 1. Repositório com códigos do R e Fusion
+1.1. Bibliotecas📚: LidR...
 
 ### More
 
