@@ -17,8 +17,8 @@ outDir.clip<-paste("D:/Trabalhando/Nuvens_IFG_UFG/XYZ/las/Clipped")
 cld<-lidR::readLAS(files[1])
 plot(cld) ; axes3d(col='white')
 
-?lasground
-?grid_terrain
+lasground
+grid_terrain
 
 for(i in 1:length(files)){
   file = files[i]
