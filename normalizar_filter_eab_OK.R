@@ -1,7 +1,7 @@
 Sys.setenv(R_NUM_THREADS = "8") # Set your (Cores - 1) (Allocate your Web)
 
 
-#### Clipar e normalizar nuvens - Tanguro
+#### Clipar e normalizar nuvens 
 
 library(lidR)
 library(rgl)
@@ -43,7 +43,7 @@ for(i in 1:length(files)){
   dtm = grid_terrain(ground, 1, tin())
   cld.norm = normalize_height(cld, dtm)
   
-  #Clipar para a subparcela de 10x10m
+  #Clip para a subparcela de 10x10m
   cld.clip<-clip_rectangle(cld.norm, -5, -5, 5, 5)
   
   # ch
