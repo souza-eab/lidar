@@ -1,0 +1,11 @@
+# Aqui as referências:: 
+
+
+#Dalla Corte, et al., 
+<https://www.academia.edu/80916846/Aplica%C3%A7%C3%B5es_do_LiDAR_para_o_invent%C3%A1rio_florestal_Enfoque_unidade_de_%C3%A1rea_Atena_Editora_>;
+
+#Duncanson et al.,  'aulas' 
+<https://github.com/souza-eab/servir_lidar_training>;
+
+# Methods
++ LidR Roussel, et al <https://www.sciencedirect.com/science/article/pii/S0034425720304314>;
