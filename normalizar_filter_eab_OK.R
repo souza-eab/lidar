@@ -24,6 +24,7 @@ plot(cld) ; axes3d(col='white')
 #lasground
 #grid_terrain
 
+# Function 
 for(i in 1:length(files)){
   file = files[i]
   
@@ -31,24 +32,24 @@ for(i in 1:length(files)){
   
   # read point cloud and slam file
   cld = lidR::readLAS(file)
-  cld@header@PHB$`X scale factor` = .0001
+  cld@header@PHB$`X scale factor` = .0001 # Units of Measurement TLS = 0.0001
   cld@header@PHB$`Y scale factor` = .0001
   cld@header@PHB$`Z scale factor` = .0001
   cld@header@PHB$`X offset` = .0001
   cld@header@PHB$`Y offset` = .0001
   # classify ground points
-  ground<-classify_ground(cld, csf(rigidness=3))
+  ground<-classify_ground(cld, csf(rigidness=3)) #??classify_ground; set your algorithm; parameters :: terrain
   
   # normalizar com base no DTM 
-  dtm = grid_terrain(ground, 1, tin())
-  cld.norm = normalize_height(cld, dtm)
+  dtm = grid_terrain(ground, 1, tin()) # ??grid_terrain; scale, set your algorithm; 
+  cld.norm = normalize_height(cld, dtm) # Normalize heigh
   
   #Clip para a subparcela de 10x10m
-  cld.clip<-clip_rectangle(cld.norm, -5, -5, 5, 5)
+  cld.clip<-clip_rectangle(cld.norm, -5, -5, 5, 5) 
   
   # ch
   chm <-  cld.clip
-  #chm@header@crs$projargs <- "+init=epsg:4326"
+  #chm@header@crs$projargs <- "+init=epsg:4326" #Set your epsg; 
   #chm.grid <- grid_metrics(cld.norm, max(Z), 1, filter = NULL)
   b <- extent(chm) # BoundBox
   r <- raster(b, res = 1) #Your resolution
