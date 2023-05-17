@@ -2,6 +2,12 @@
 ## Set your directory
 setwd("D:/Lidar/data/tls/")
 
+# Define your path output
+outDir.norm<-paste("D:/Lidar/data/tls/Normalized")
+outDir.clip<-paste("D:/Lidar/data/tls/Clipped")
+outDir.chm <- paste("D:/Lidar/data/tls/chm_norm")
+
+
 # Set your cores
 Sys.setenv(R_NUM_THREADS = "8") # Set your (Cores - 1) (Allocate your Web)
 
@@ -18,11 +24,6 @@ library(raster)
 ## If you have multiple TLS it's fine to put the processing in a loop to perform them, but if it's just a given TLS - treat individually.
 ### Read and display a catalog of las files eg. P01F.las
 files = dir(pattern = '\\.las$')
-
-# Define your path output
-outDir.norm<-paste("D:/Lidar/data/tls/Normalized")
-outDir.clip<-paste("D:/Lidar/data/tls/Clipped")
-outDir.chm <- paste("D:/Lidar/data/tls/chm_norm")
 
 
 ######################################################################
