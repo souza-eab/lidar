@@ -51,8 +51,8 @@ las_check(cld)
 head(cld)
 
 # Set the coordinate reference system (CRS)
-crs <- "+proj=utm +zone=18 +datum=WGS84 +units=m +no_defs"  # Eg. CRS UTM zone 18
-setCRS(cld, crs)
+#crs <- "+proj=utm +zone=18 +datum=WGS84 +units=m +no_defs"  # Eg. CRS UTM zone 18
+#setCRS(cld, crs)
 
 # After checking the data
 
@@ -77,6 +77,7 @@ cld99_points <- filter_poi(cld, Z <= cld99)
 
 # Return equal name for to apply function
 cld <-  cld99_points
+cld <- filter_duplicates(cld)
 
 #-------------------------------------------------------------
 
@@ -118,11 +119,11 @@ for(i in 1:length(files)){
     
   m <- grid_metrics(chm, ~max(Z), r) # Eg. CHM 
   
-  plot(m)
-  plot(extent(m), add = T, col = "red", lwd = 2)
-  
   colors <- height.colors(50)
   plot(chm, col=colors)
+  
+  plot(m)
+  plot(extent(m), add = T, col = "red", lwd = 2)
   
   # name files to be written
   outLas.norm = paste(outDir.norm, sub('.laz','_norm.laz',file,fixed = T), sep='/')
